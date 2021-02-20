@@ -1,2 +1,2 @@
 # mybin
- flahs customize bin
+ flash customize bin
