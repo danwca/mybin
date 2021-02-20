@@ -1,0 +1,2 @@
+# mybin
+ flahs customize bin
