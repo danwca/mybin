@@ -9,6 +9,8 @@
 ## 说明
  
 ### 16Mbit-C1 (1024+1024 map) Flash，结构：
+https://www.espressif.com/sites/default/files/documentation/esp8266_quick_start_guide_cn.pdf
+
 BIN|烧录地址|说明
 ------------------|---------------|-------------------------------
 boot.bin|0x00000|主程序，位于 \bin\at
