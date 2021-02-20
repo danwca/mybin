@@ -85,11 +85,23 @@ user_rf_cal_sector_set(void)
  * Returns      : none
 *******************************************************************************/
 void ICACHE_FLASH_ATTR
-user_init(void)
+user_init1(void)
 {
+	long * ptr = (long *) 0x00010000;
     os_printf("SDK version:%s ,\r\n", system_get_sdk_version());
-	os_printf(" Compile time:%s %s\r\n", __DATE__, __TIME__);
+	os_printf(" data@0x00010000 is 0x%4X", * ptr);
 	os_printf("\r\nHello world gang user_init %s!\r\n", __TIME__);
 }
 
+void ICACHE_FLASH_ATTR
+user_init(void)
+{
+	uint32 temp1[4]={0};
+	long * ptr = (long *) 0x00010000;
+	int p = spi_flash_read(0x010000, temp1, sizeof(temp1));
+	
+	os_printf("SDK version:%s ,\r\n", system_get_sdk_version());
+	os_printf(" data@0x00010000 is 0x%4X", * temp1);
+	os_printf("\r\nHello world gang user_init %s!\r\n", __TIME__);
+}
 
